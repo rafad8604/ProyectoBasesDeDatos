@@ -177,7 +177,7 @@
       <dialog class="container-form sign-in" id="modal" class="modal">
     
         
-    <h2 class="form-title">REGISTRO DE PROPUESTAS</h2><br>
+    <h2 class="form-title">REGISTRO DE PROPUESTAS</h2><br><br>
     <div id="btn-cerrar-modal" class="btn-cerrar-modal"></div>
   
     <form action="insertarPropu.php" method="post">
