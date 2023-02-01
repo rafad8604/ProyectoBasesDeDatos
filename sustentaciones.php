@@ -200,7 +200,7 @@
         <!-- NOMBRE DE LOS ESTUDIANTES -->
         <th>
             <?php 
-            $sql = "SELECT nomb_est, ape_est FROM estudiantes WHERE cod_proye='$row->cod_proye'";
+            $sql = "SELECT nomb_est, ape_est FROM estudiantes WHERE cod_proye='$row->cod_proye' order by nomb_est asc";
             $queryx = pg_query($sql);
             if(pg_num_rows($queryx)>0){
                 while($rowd=pg_fetch_object($queryx)){ ?>
