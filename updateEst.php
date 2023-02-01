@@ -53,7 +53,7 @@ $query = pg_query($sql);
 
 if($query){
    
-    include_once  "../views/estudiantes.php";
+    include_once  "estudiantes.php";
     echo '<script> Swal.fire({
         icon: "success",
         title: "Buen trabajo!",
