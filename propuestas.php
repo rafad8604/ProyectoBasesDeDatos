@@ -257,7 +257,7 @@
             <tbody>
             <?php
 
-        $sql = "SELECT cod_proye, nomb_proye, descripcion, fecha_pro, cod_dir, estado, cod_est FROM proyectos";
+        $sql = "SELECT cod_proye, nomb_proye, descripcion, fecha_pro, cod_dir, estado, cod_est FROM proyectos order by nomb_proye asc";
         $query = pg_query($conect, $sql);
 
         if(pg_num_rows($query)>0){
