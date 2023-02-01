@@ -41,7 +41,7 @@
 <aside>
 
 <div class="aside-logo">
-        <img src="../../public/images/logounillanos.png" alt="">
+        <img src="images/logounillanos.png" alt="">
 </div>
 
 <div class="line"></div>
