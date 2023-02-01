@@ -212,7 +212,7 @@
             </thead>
             <tbody>
                 <?php
-                $sql = "SELECT cod_jur, dni, nomb_jur, ape_jur FROM jurados";
+                $sql = "SELECT cod_jur, dni, nomb_jur, ape_jur FROM jurados order by cod_jur asc";
                 $query = pg_query($conect, $sql);
 
                 if(pg_num_rows($query)>0){
