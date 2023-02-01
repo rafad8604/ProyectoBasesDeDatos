@@ -144,7 +144,7 @@
     <button onclick="toggleDropdown()">
 
         <span id="chevron">
-        <img style="opacity:0.5" src="../../public/images/profile.png" alt="" srcset="">
+        <img style="opacity:0.5" src="images/profile.png" alt="" srcset="">
         </span>
 
     </button>
