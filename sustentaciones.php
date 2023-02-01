@@ -13,7 +13,7 @@
 
     <!-- Conexion con la hoja de estilos -->
 
-    <link rel="stylesheet" href="../../public/css/inicio.css">
+    <link rel="stylesheet" href="css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
 
@@ -23,7 +23,7 @@
 
     <script src="https://kit.fontawesome.com/ccd4ed56f8.js" crossorigin="anonymous"></script>
 
-    <script src="../../main.js"></script>
+    <script src="main.js"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,7 +38,7 @@
 
        
 <div class="aside-logo">
-        <img src="../../public/images/logounillanos.png" alt="">
+        <img src="images/logounillanos.png" alt="">
 </div>
 
 <div class="line"></div>
@@ -140,7 +140,7 @@
     <button onclick="toggleDropdown()">
 
         <span id="chevron">
-        <img style="opacity:0.5" src="../../public/images/profile.png" alt="" srcset="">
+        <img style="opacity:0.5" src="images/profile.png" alt="" srcset="">
         </span>
 
     </button>
