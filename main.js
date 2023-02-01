@@ -169,7 +169,7 @@ btnCerrarModal.addEventListener("click", function(){
      
      let datoE = e.currentTarget.getAttribute("value");
    
-     const dataE = await fetch("VisualizarEstudiante.php?id="+datoE);
+     const dataE = await fetch("visualizarEstudiante.php?id="+datoE);
      const E = await dataE.text();
  
      ModalEstudiante.innerHTML = E;
