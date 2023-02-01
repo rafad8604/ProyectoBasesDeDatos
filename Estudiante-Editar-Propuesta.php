@@ -22,7 +22,7 @@ $row = pg_fetch_object($query);
 
     <!-- Conexion con la hoja de estilos -->
 
-    <link rel="stylesheet" href="../../public/css/inicio.css">
+    <link rel="stylesheet" href="css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
 
