@@ -148,7 +148,7 @@ if($query >= 1){
 
     <header>
         <div class="header-login">
-            <img src="../../public/images/user-sebas.webp" alt="" srcset="">
+            <img src="images/user-sebas.webp" alt="" srcset="">
         </div>
         <div class="header-title">Admin</div>
         <div class="header-line"></div>
