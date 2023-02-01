@@ -42,7 +42,7 @@ if($query >= 1){
 
     <script src="https://kit.fontawesome.com/ccd4ed56f8.js" crossorigin="anonymous"></script>
 
-    <script src="../../main.js"></script>
+    <script src="main.js"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,7 +56,7 @@ if($query >= 1){
     <aside>
 
         <div class="aside-logo">
-                <img src="../../public/images/logounillanos.png" alt="">
+                <img src="images/logounillanos.png" alt="">
         </div>
 
         <div class="line"></div>
