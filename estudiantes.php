@@ -222,7 +222,7 @@
             </thead>
             <tbody>
                 <?php
-                $sql = "SELECT cod_est, dni, nomb_est, ape_est, cod_proye FROM estudiantes";
+                $sql = "SELECT cod_est, dni, nomb_est, ape_est, cod_proye FROM estudiantes order by cod_est asc";
                 $query = pg_query($conect, $sql);
 
                 if(pg_num_rows($query)>0){
