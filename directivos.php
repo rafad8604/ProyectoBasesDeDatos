@@ -204,7 +204,7 @@
             </thead>
             <tbody>
                 <?php
-                $query = "SELECT cod_dir, dni, nomb_dir, ape_dir FROM directores order by cod_dir asc";
+                $query = "SELECT cod_dir, dni, nomb_dir, ape_dir FROM directores order by nomb_dir asc";
                 $consulta = pg_query($conect, $query);
 
                 if(pg_num_rows($consulta)>0){
