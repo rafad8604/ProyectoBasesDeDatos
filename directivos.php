@@ -9,7 +9,7 @@
 
     <!-- Conexion con la hoja de estilos -->
 
-    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="../../public/css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
 
@@ -37,7 +37,7 @@
     <aside>
 
     <div class="aside-logo">
-                <img src="images/logounillanos.png" alt="">
+                <img src="../../public/images/logounillanos.png" alt="">
         </div>
 
         <div class="line"></div>
@@ -69,7 +69,7 @@
 
                 <li>
                     <a href="jurados.php">
-                    <i class="fa-solid fa-puzzle-piece"></i>
+                    <i  class="fa-solid fa-puzzle-piece"></i>
                     JURADOS
                     </a> 
                 </li>
@@ -77,8 +77,8 @@
                 <br>
 
                 <li>
-                    <a href="directivos.php">
-                    <i class="fa-solid fa-chalkboard-user"></i>
+                    <a style="font-weight:bold;" href="directivos.php">
+                    <i style="color:white" class="fa-solid fa-chalkboard-user"></i>
                     DIRECTORES
                     </a> 
                 </li>
@@ -137,18 +137,13 @@
     <button onclick="toggleDropdown()">
 
         <span id="chevron">
-        <img style="opacity:0.5" src="images/profile.png" alt="" srcset="">
+        <img style="opacity:0.5" src="../../public/images/profile.png" alt="" srcset="">
         </span>
 
     </button>
 
     <div id="menudd" class="menudd">
-
-        <!-- <button onclick="handleMenuButtonClicked()">
-        <span class="material-symbols-outlined"> build </span>
-        Tools
-        </button> -->
-        
+      
     <button onclick="handleMenuButtonClicked()">
     
         <span class="material-symbols-outlined"> lock </span>
@@ -173,16 +168,30 @@
 
     <dialog class="container-form sign-in" id="modal">
     
-        <div id="btn-cerrar-modal"></div>
-        <h2 class="form-title">REGISTRO DE DIRECTORES</h2>
+    <div class="numberCircle">
+            <img src="../../public/images/add.png" alt="" srcset="">
+        </div>
+        
+        <div class="contenido-modal">
+    
+        <div class="title-modal">
+           <a href="jurados.php"> <div id="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></div> </a>
+        </div>
+
         <form class="formulario" action="insertarDir.php" method="post">
-        <input type="text" pattern="[0-9]+" required name="dni" placeholder="Dni">
-        <input type="text" pattern="[a-zA-Z ]+" required name="nombre" placeholder="Nombre">
-        <input type="text" pattern="[a-zA-Z ]+" required name="apellido" placeholder="Apellido">
-        <input class="sign-in-btn" type="submit" value="Registrar">
+
+        <input class="enjoy-css" type="text" pattern="[0-9]+" required name="dni" placeholder="Dni">
+        <input class="enjoy-css" type="text" pattern="[a-zA-Z ]+" required name="nombre" placeholder="Nombre">
+        <input class="enjoy-css" type="text" pattern="[a-zA-Z ]+" required name="apellido" placeholder="Apellido">
+
+        <input class="sign-in-btn" type="submit" value="Crear">
         </form>
 
+        </div>
+
     </dialog>
+
+    <!-- Modal Editar Directivos -->
 
     <dialog id="modal-editar-Dir" class="modal-estilo"> 
 
@@ -204,7 +213,7 @@
             </thead>
             <tbody>
                 <?php
-                $query = "SELECT cod_dir, dni, nomb_dir, ape_dir FROM directores order by nomb_dir asc";
+                $query = "SELECT cod_dir, dni, nomb_dir, ape_dir FROM directores";
                 $consulta = pg_query($conect, $query);
 
                 if(pg_num_rows($consulta)>0){
