@@ -17,7 +17,7 @@ $rowd = pg_fetch_object($query);
 <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="css/inicio.css">
+        <link rel="stylesheet" href="../../public/css/inicio.css">
         <script src="prueba.js"></script>
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,20 +27,26 @@ $rowd = pg_fetch_object($query);
 
 <dialog open id="modal-editar" class="modal-estilo"> 
 
-<div class="contenedor-modal-editar">
+<div class="numberCircle">
+            <img src="../../public/images/edit.png" alt="" srcset="">
+        </div>
 
+        <div class="contenido-modal">
 
+        <div class="title-modal">
+           <a href="directivos.php"> <div id="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></div> </a>
+        </div>
 
-<form action="updateDir.php" method="POST">
+<form class="formulario" action="updateDir.php" method="POST">
 
 <input value="<?php echo $codigo ?>" type="hidden" name="codigo">
 
-<input type="text" name="dni" placeholder="Dni" value="<?php echo $rowd->dni ?>">
-<input type="text" name="nombres" placeholder="Nombres" value="<?php echo $rowd->nomb_dir ?>">
-<input type="text" name="apellidos" placeholder="Apellidos" value="<?php echo $rowd->ape_dir ?>">
+<input class="enjoy-css" type="text" name="dni" placeholder="Dni" value="<?php echo $rowd->dni ?>">
+<input class="enjoy-css" type="text" name="nombres" placeholder="Nombres" value="<?php echo $rowd->nomb_dir ?>">
+<input class="enjoy-css" type="text" name="apellidos" placeholder="Apellidos" value="<?php echo $rowd->ape_dir ?>">
 
-<input type="submit" value="Actualizar">
-<a href="directivos.php">CERRAR</a>
+<input type="submit" value="Editar">
+
 
 </form>
 
