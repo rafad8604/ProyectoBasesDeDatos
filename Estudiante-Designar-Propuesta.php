@@ -39,7 +39,7 @@ $cod_proye=$_GET['id'];
 </head>
 <body>
 <div class="numberCircle">
-            <img src="../../public/images/block-user.png" alt="" srcset="">
+            <img src="images/block-user.png" alt="" srcset="">
         </div>
 
         <div class="contenido-modal">
