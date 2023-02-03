@@ -33,7 +33,7 @@ include_once  "estudiantes.php";
 echo '<script> Swal.fire({
   icon: "success",
   title: "Buen trabajo!",
-  text: "Se actualizo de manera correcta el jurado",
+  text: "Se ha actualizado de manera correcta el estudiante ",
 });</script>';
 
 }else if($cantidad >= 1){
@@ -53,7 +53,7 @@ $query = pg_query($sql);
 
 if($query){
    
-    include_once  "estudiantes.php";
+    include_once  "../views/estudiantes.php";
     echo '<script> Swal.fire({
         icon: "success",
         title: "Buen trabajo!",
