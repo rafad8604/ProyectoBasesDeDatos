@@ -10,7 +10,7 @@
 
     <!-- Conexion con la hoja de estilos -->
 
-    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="../../public/css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
 
@@ -20,7 +20,7 @@
 
     <script src="https://kit.fontawesome.com/ccd4ed56f8.js" crossorigin="anonymous"></script>
 
-    <script src="main.js"></script>
+    <script src="../../main.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 
@@ -36,7 +36,7 @@
     <aside>
 
     <div class="aside-logo">
-                <img src="images/logounillanos.png" alt="">
+                <img src="../../public/images/logounillanos.png" alt="">
         </div>
 
         <div class="line"></div>
@@ -94,8 +94,8 @@
     
     <ul>
         <li>
-            <a href="propuestas.php">
-            <i class="fa-solid fa-file-pen"></i>
+            <a style="font-weight:bold;" href="propuestas.php">
+            <i style="color:white" class="fa-solid fa-file-pen"></i>
             PROPUESTAS
             </a> 
         </li>
@@ -138,18 +138,13 @@
     <button onclick="toggleDropdown()">
 
         <span id="chevron">
-        <img style="opacity:0.5" src="images/profile.png" alt="" srcset="">
+        <img style="opacity:0.5" src="../../public/images/profile.png" alt="" srcset="">
         </span>
 
     </button>
 
     <div id="menudd" class="menudd">
 
-        <!-- <button onclick="handleMenuButtonClicked()">
-        <span class="material-symbols-outlined"> build </span>
-        Tools
-        </button> -->
-        
     <button onclick="handleMenuButtonClicked()">
     
         <span class="material-symbols-outlined"> lock </span>
@@ -174,18 +169,29 @@
 
       <!-- AGREGAR PROPUESTA -->
 
-      <dialog class="container-form sign-in" id="modal" class="modal">
+    <dialog class="container-form sign-in" id="modal" class="modal">
+    
+      <div class="numberCircle">
+            <img src="../../public/images/add-file.png" alt="" srcset="">
+        </div>
     
         
-    <h2 class="form-title">REGISTRO DE PROPUESTAS</h2><br><br>
-    <div id="btn-cerrar-modal" class="btn-cerrar-modal"></div>
+        <div class="contenido-modal">
+
+        <div class="title-modal">
+            <div id="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+
+   
   
-    <form action="insertarPropu.php" method="post">
-        <input type="text" required name="nomb_proye" placeholder="Nombre Proyecto">
-        <input type="date" required name="fecha_pro" placeholder="Fecha">
-        <input type="text" required name="descripcion" placeholder="Descripcion">
+    <form class="formulario" action="insertarPropu.php" method="post">
+        <input class="enjoy-css" type="text" required name="nomb_proye" placeholder="Nombre Proyecto">
+        <input class="enjoy-css" type="date" required name="fecha_pro">
+        <input class="enjoy-css" type="text" required name="descripcion" placeholder="Descripcion">
         <input class="sign-in-btn" type="submit" value="Registrar">
         </form>
+
+    </div>
 
     </dialog>
 
@@ -257,7 +263,7 @@
             <tbody>
             <?php
 
-        $sql = "SELECT cod_proye, nomb_proye, descripcion, fecha_pro, cod_dir, estado, cod_est FROM proyectos order by nomb_proye asc";
+        $sql = "SELECT cod_proye, nomb_proye, descripcion, fecha_pro, cod_dir, estado, cod_est FROM proyectos";
         $query = pg_query($conect, $sql);
 
         if(pg_num_rows($query)>0){
