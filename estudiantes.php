@@ -11,7 +11,7 @@
 
     <!-- Conexion con la hoja de estilos -->
 
-    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="../../public/css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
 
@@ -37,99 +37,100 @@
 <body>
     
 <div class="contenedor">
-
+ 
 <aside>
 
-<div class="aside-logo">
-        <img src="images/logounillanos.png" alt="">
-</div>
+    <div class="aside-logo">
+            <img src="../../public/images/logounillanos.png" alt="">
+    </div>
 
-<div class="line"></div>
+    <div class="line"></div>
 
-<div class="dashboard">
+    <div class="dashboard">
 
-    <a href="inicio.php">
-    <i class="fa-solid fa-house"></i>
-    <b>DASHBOARD</b>
-    </a>
+        <a href="inicio.php">
+        <i class="fa-solid fa-house"></i>
+        <b>DASHBOARD</b>
+        </a>
 
-</div>
+    </div>
 
-<div class="line"></div>
+    <div class="line"></div>
 
-<div class="aside-interface"><b>INTERFACE</b></div>
+    <div class="aside-interface"><b>INTERFACE</b></div>
 
-<div class="aside-componentes">
-    
-    <ul>
-        <li>
-            <a href="#">
-            <i class="fa-solid fa-graduation-cap"></i>
-            ESTUDIANTES
-            </a> 
-        </li>
+    <div class="aside-componentes">
         
-        <br>
+        <ul>
+            <li >
+                <a style="font-weight:bold;" href="#">
+                <i style="color:white;" class="fa-solid fa-graduation-cap"></i>
+                ESTUDIANTES
+                </a> 
+            </li>
+            
+            <br>
 
-        <li>
-            <a href="jurados.php">
-            <i class="fa-solid fa-puzzle-piece"></i>
-            JURADOS
-            </a> 
-        </li>
+            <li>
+                <a href="jurados.php">
+                <i class="fa-solid fa-puzzle-piece"></i>
+                JURADOS
+                </a> 
+            </li>
 
-        <br>
+            <br>
 
-        <li>
-            <a href="directivos.php">
-            <i class="fa-solid fa-chalkboard-user"></i>
-            DIRECTORES
-            </a> 
-        </li>
+            <li>
+                <a href="directivos.php">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                DIRECTORES
+                </a> 
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="line-two"></div>
+
+    <div class="aside-interface"><b>PROYECTOS DE GRADO</b></div>
+
+    <div class="aside-componentes">
+
+    <ul>
+    <li>
+        <a href="propuestas.php">
+        <i class="fa-solid fa-file-pen"></i>
+        PROPUESTAS
+        </a> 
+    </li>
+
+    <br>
+
+    <li>
+        <a href="proyectos.php">
+        <i class="fa-solid fa-feather"></i>
+        PROYECTOS
+        </a> 
+    </li>
+
+    <br>
+
+    <li>
+        <a href="sustentaciones.php">
+        <i class="fa-regular fa-comments"></i>
+        SUSTENTACIONES 
+        </a> 
+    </li>
 
     </ul>
 
-</div>
-
-<div class="line-two"></div>
-
-<div class="aside-interface"><b>PROYECTOS DE GRADO</b></div>
-
-<div class="aside-componentes">
-
-<ul>
-<li>
-    <a href="propuestas.php">
-    <i class="fa-solid fa-file-pen"></i>
-    PROPUESTAS
-    </a> 
-</li>
-
-<br>
-
-<li>
-    <a href="proyectos.php">
-    <i class="fa-solid fa-feather"></i>
-    PROYECTOS
-    </a> 
-</li>
-
-<br>
-
-<li>
-    <a href="sustentaciones.php">
-    <i class="fa-regular fa-comments"></i>
-    SUSTENTACIONES 
-    </a> 
-</li>
-
-</ul>
-
-</div>
+    </div>
 
 
 
 </aside>
+
 
     <header>
        
@@ -144,7 +145,7 @@
     <button onclick="toggleDropdown()">
 
         <span id="chevron">
-        <img style="opacity:0.5" src="images/profile.png" alt="" srcset="">
+        <img style="opacity:0.5" src="../../public/images/profile.png" alt="" srcset="">
         </span>
 
     </button>
@@ -176,32 +177,35 @@
 
     <!-- AGREGAR ESTUDIANTES -->
 
-    <dialog open id="modal" class="modal">
+    <dialog id="modal" class="modal-estilo">
+
+        <div class="numberCircle">
+            <img src="../../public/images/add.png" alt="" srcset="">
+        </div>
 
         <div class="contenido-modal">
 
-            <div class="title-modal">
-
-            
+        <div class="title-modal">
             <div id="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></div>
+        </div>
 
-            </div>
+            <form class="formulario" action="insertarEst.php" method="post">
 
-            <!-- <form class="formulario" action="insertarEst.php" method="post">
-
-            <input type="text" pattern="[0-9]+" required name="dni" placeholder="Dni">
-            <input type="text" pattern="[a-zA-Z ]+" required name="nomb_est" placeholder="Nombre">
-            <input type="text" pattern="[a-zA-Z ]+" required name="ape_est" placeholder="Apellido">
-            <input class="sign-in-btn" type="submit" value="Registrar">
+            <input class="enjoy-css" type="text" pattern="[0-9]+" required name="dni" placeholder="Dni">
+            <input class="enjoy-css" type="text" pattern="[a-zA-Z ]+" required name="nomb_est" placeholder="Nombre">
+            <input class="enjoy-css" type="text" pattern="[a-zA-Z ]+" required name="ape_est" placeholder="Apellido">
+            <input class="sign-in-btn" type="submit" value="Crear">
             </form>
 
-        </div> -->
+        </div>
        
     </dialog>
 
     <!-- EDITAR ESTUDIANTES -->
 
     <dialog id="modal-editar" class="modal-estilo"> 
+
+    
 
     </dialog>
 
@@ -222,7 +226,7 @@
             </thead>
             <tbody>
                 <?php
-                $sql = "SELECT cod_est, dni, nomb_est, ape_est, cod_proye FROM estudiantes order by nomb_est asc";
+                $sql = "SELECT cod_est, dni, nomb_est, ape_est, cod_proye FROM estudiantes";
                 $query = pg_query($conect, $sql);
 
                 if(pg_num_rows($query)>0){
