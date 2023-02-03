@@ -41,7 +41,7 @@ $row = pg_fetch_object($query);
 </head>
 <body>
 <div class="numberCircle">
-            <img src="../../public/images/edit.png" alt="" srcset="">
+            <img src="images/edit.png" alt="" srcset="">
         </div>
 
         <div class="contenido-modal">
