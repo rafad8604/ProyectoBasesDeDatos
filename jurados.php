@@ -9,7 +9,7 @@
 
     <!-- Conexion con la hoja de estilos -->
 
-    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="../../public/css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
 
@@ -37,7 +37,7 @@
     <aside>
 
     <div class="aside-logo">
-                <img src="images/logounillanos.png" alt="">
+                <img src="../../public/images/logounillanos.png" alt="">
         </div>
 
         <div class="line"></div>
@@ -68,8 +68,8 @@
                 <br>
 
                 <li>
-                    <a href="jurados.php">
-                    <i class="fa-solid fa-puzzle-piece"></i>
+                    <a style="font-weight:bold;" href="jurados.php">
+                    <i style="color:white" class="fa-solid fa-puzzle-piece"></i>
                     JURADOS
                     </a> 
                 </li>
@@ -137,7 +137,7 @@
     <button onclick="toggleDropdown()">
 
         <span id="chevron">
-        <img style="opacity:0.5" src="images/profile.png" alt="" srcset="">
+        <img style="opacity:0.5" src="../../public/images/profile.png" alt="" srcset="">
         </span>
 
     </button>
@@ -174,16 +174,30 @@
     </div>
 
     <dialog class="container-form sign-in" id="modal">
-    
-        <div id="btn-cerrar-modal"></div>
-        <h2 class="form-title">REGISTRO DE JURADOS</h2>
+
+    <div class="numberCircle">
+            <img src="../../public/images/add.png" alt="" srcset="">
+        </div>
+
+        <div class="contenido-modal">
+
+        <div class="title-modal">
+            <div id="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></div>
+        </div>
 
         <form class="formulario" action="insertarJur.php" method="post">
-        <input type="text" pattern="[0-9]+" required name="dni" placeholder="Dni">
-        <input type="text" pattern="[a-zA-Z ]+" required name="nomb_jur" placeholder="Nombre">
-        <input type="text" pattern="[a-zA-Z ]+" required name="ape_jur" placeholder="Apellido">
-        <input class="sign-in-btn" type="submit" value="Registrar">
+        <input class="enjoy-css" type="text" pattern="[0-9]+" required name="dni" placeholder="Dni">
+        <input class="enjoy-css" type="text" pattern="[a-zA-Z ]+" required name="nomb_jur" placeholder="Nombre">
+        <input class="enjoy-css" type="text" pattern="[a-zA-Z ]+" required name="ape_jur" placeholder="Apellido">
+        <input class="sign-in-btn" type="submit" value="Crear">
         </form>
+
+        </div>
+    
+        
+        
+
+        
 
          <!-- EDITAR JURADOS -->
 
@@ -212,7 +226,7 @@
             </thead>
             <tbody>
                 <?php
-                $sql = "SELECT cod_jur, dni, nomb_jur, ape_jur FROM jurados order by nomb_jur asc";
+                $sql = "SELECT cod_jur, dni, nomb_jur, ape_jur FROM jurados";
                 $query = pg_query($conect, $sql);
 
                 if(pg_num_rows($query)>0){
