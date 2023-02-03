@@ -11,7 +11,7 @@
 
     <!-- Conexion con la hoja de estilos -->
 
-    <link rel="stylesheet" href="inicio.css">
+    <link rel="stylesheet" href="css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
 
