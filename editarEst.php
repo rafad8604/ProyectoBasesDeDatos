@@ -28,7 +28,7 @@ $rowd = pg_fetch_object($query);
         <dialog open id="modal-editar" class="modal-estilo"> 
 
         <div class="numberCircle">
-            <img src="../../public/images/edit.png" alt="" srcset="">
+            <img src="images/edit.png" alt="" srcset="">
         </div>
 
         <div class="contenido-modal">
