@@ -22,7 +22,7 @@ $row = pg_fetch_object($query);
 
     <!-- Conexion con la hoja de estilos -->
 
-    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="../../public/css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
 
@@ -32,7 +32,7 @@ $row = pg_fetch_object($query);
 
     <script src="https://kit.fontawesome.com/ccd4ed56f8.js" crossorigin="anonymous"></script>
 
-    <script src="main.js"></script>
+    <script src="../../main.js"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,18 +40,26 @@ $row = pg_fetch_object($query);
     <title>Unillanos - DashBoard</title>
 </head>
 <body>
+<div class="numberCircle">
+            <img src="../../public/images/edit.png" alt="" srcset="">
+        </div>
 
-    <form action="updatePropu.php" method="POST">
+        <div class="contenido-modal">
+
+        <div class="title-modal">
+           <a href="propuestas.php"> <div id="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></div></a>
+        </div>
+    <form class="formulario" action="updatePropu.php" method="POST">
 
     <input type="hidden" name="codigo" value="<?php echo $cod_proye ?>">
-    <input type="text" name="nomb_proye" value="<?php echo $row->nomb_proye ?>">
-    <input type="date" name="fecha" value="<?php echo $row->fecha_pro ?>">
-    <input type="text" name="descripcion" placeholder="Descripcion" value="<?php echo $row->descripcion ?>">
+    <input class="enjoy-css" type="text" name="nomb_proye" value="<?php echo $row->nomb_proye ?>">
+    <input class="enjoy-css" type="date" name="fecha" value="<?php echo $row->fecha_pro ?>">
+    <input class="enjoy-css" type="text" name="descripcion" placeholder="Descripcion" value="<?php echo $row->descripcion ?>">
     
     <input type="submit" value="Actualizar">
     </form>
     
-    
+    </div>
  
 </body>
 </html>
