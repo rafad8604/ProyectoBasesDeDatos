@@ -17,7 +17,7 @@ $rowd = pg_fetch_object($query);
 <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="css/inicio.css">
+        <link rel="stylesheet" href="../../public/css/inicio.css">
         <script src="prueba.js"></script>
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,22 +27,29 @@ $rowd = pg_fetch_object($query);
 
 <dialog open id="modal-editar" class="modal-estilo"> 
 
-<div class="contenedor-modal-editar">
+        <div class="numberCircle">
+                <img src="../../public/images/edit.png" alt="" srcset="">
+                </div>
 
-<form action="updateJur.php" method="POST">
+        <div class="contenido-modal">
 
-<input value="<?php echo $codigo ?>" type="hidden" name="codigo">
+        <div class="title-modal">
+           <a href="jurados.php"> <div id="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></div> </a>
+        </div>
 
-<input type="text" name="dni" placeholder="Dni" value="<?php echo $rowd->dni ?>">
-<input type="text" name="nombres" placeholder="Nombres" value="<?php echo $rowd->nomb_jur ?>">
-<input type="text" name="apellidos" placeholder="Apellidos" value="<?php echo $rowd->ape_jur ?>">
+        <form class="formulario" action="updateJur.php" method="POST">
 
-<input type="submit" value="Actualizar">
-<a href="jurados.php">CERRAR</a>
+        <input value="<?php echo $codigo ?>" type="hidden" name="codigo">
 
-</form>
+        <input  class="enjoy-css" type="text" name="dni" placeholder="Dni" value="<?php echo $rowd->dni ?>">
+        <input  class="enjoy-css" type="text" name="nombres" placeholder="Nombres" value="<?php echo $rowd->nomb_jur ?>">
+        <input  class="enjoy-css" type="text" name="apellidos" placeholder="Apellidos" value="<?php echo $rowd->ape_jur ?>">
 
-</div>
+        <input type="submit" value="Editar">
+
+        </form>
+
+        </div>
 
 </dialog>
 
