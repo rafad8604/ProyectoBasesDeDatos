@@ -20,7 +20,7 @@ $cod_proye=$_GET['id'];
 
     <!-- Conexion con la hoja de estilos -->
 
-    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="../../public/css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
 
@@ -30,7 +30,7 @@ $cod_proye=$_GET['id'];
 
     <script src="https://kit.fontawesome.com/ccd4ed56f8.js" crossorigin="anonymous"></script>
 
-    <script src="main.js"></script>
+    <script src="../../main.js"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,24 +38,38 @@ $cod_proye=$_GET['id'];
     <title>Unillanos - DashBoard</title>
 </head>
 <body>
-    
-    <form action="asignarDir.php" method="POST">
 
-        <select name="agregarDir" id="form-propuestas">
-            <option>---------Selecione un director----------</option> 
-            <?php
-                                            $sql="SELECT cod_dir, nomb_dir, ape_dir FROM directores";
-                                            $query=pg_query($sql);
-                                            $query=pg_query($sql);
-                                            while($row = pg_fetch_array($query)){
-                                               echo '<option value="'.$row['cod_dir'].'">'.$row['cod_dir'].'   '.$row['nomb_dir'].'  '.$row['ape_dir'].' '.'</option>';
-                                                
-                                          }
-                                        ?>
-         </select>  
-         <input type="hidden" name="cod_proye" value="<?php echo $cod_proye=$_GET['id'];?>">
-          <input type="submit" value="submit">                                  
-    </form>
+<div class="numberCircle">
+            <img src="../../public/images/add.png" alt="" srcset="">
+        </div>
+
+        <div class="contenido-modal">
+
+        <div class="title-modal">
+           <a href="propuestas.php"> <div id="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></div></a>
+        </div>
+
+        <form action="asignarDir.php" method="POST">
+
+<select class="select-box" name="agregarDir" id="form-propuestas">
+    <option>---------Selecione un director----------</option> 
+    <?php
+                                    $sql="SELECT cod_dir, nomb_dir, ape_dir FROM directores";
+                                    $query=pg_query($sql);
+                                    $query=pg_query($sql);
+                                    while($row = pg_fetch_array($query)){
+                                       echo '<option value="'.$row['cod_dir'].'">'.$row['cod_dir'].'   '.$row['nomb_dir'].'  '.$row['ape_dir'].' '.'</option>';
+                                        
+                                  }
+                                ?>
+ </select>  
+ <input type="hidden" name="cod_proye" value="<?php echo $cod_proye=$_GET['id'];?>">
+  <input class="btn-submit" type="submit" value="Asignar">                                  
+</form>
+
+        </div>
+    
+    
     
     
  
