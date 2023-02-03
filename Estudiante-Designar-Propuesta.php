@@ -20,7 +20,7 @@ $cod_proye=$_GET['id'];
 
     <!-- Conexion con la hoja de estilos -->
 
-    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="../../public/css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
 
@@ -30,7 +30,7 @@ $cod_proye=$_GET['id'];
 
     <script src="https://kit.fontawesome.com/ccd4ed56f8.js" crossorigin="anonymous"></script>
 
-    <script src="main.js"></script>
+    <script src="../../main.js"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,6 +38,15 @@ $cod_proye=$_GET['id'];
     <title>Unillanos - DashBoard</title>
 </head>
 <body>
+<div class="numberCircle">
+            <img src="../../public/images/block-user.png" alt="" srcset="">
+        </div>
+
+        <div class="contenido-modal">
+
+        <div class="title-modal">
+           <a href="propuestas.php"> <div id="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></div></a>
+        </div>
     
     <form action="designarEst.php" method="POST">
 
@@ -53,10 +62,10 @@ $cod_proye=$_GET['id'];
                                     ?>
     </select>  
     <input type="hidden" name="cod_propu" value="<?php echo $cod_proye=$_GET['id'];?>">
-    <input type="submit" value="submit">                                  
+    <input class="btn-submit" type="submit" value="Designar">                                  
     </form>
     
-    
+    </div>
  
 </body>
 </html>
