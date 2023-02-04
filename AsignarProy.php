@@ -32,7 +32,7 @@ if($query >= 1){
 
     <!-- Conexion con la hoja de estilos -->
 
-    <link rel="stylesheet" href="../../public/css/inicio.css">
+    <link rel="stylesheet" href="css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
 
@@ -42,7 +42,7 @@ if($query >= 1){
 
     <script src="https://kit.fontawesome.com/ccd4ed56f8.js" crossorigin="anonymous"></script>
 
-    <script src="../../main.js"></script>
+    <script src="main.js"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,7 +56,7 @@ if($query >= 1){
     <aside>
 
         <div class="aside-logo">
-                <img src="../../public/images/logounillanos.png" alt="">
+                <img src="images/logounillanos.png" alt="">
         </div>
 
         <div class="line"></div>
@@ -148,7 +148,7 @@ if($query >= 1){
 
     <header>
         <div class="header-login">
-            <img src="../../public/images/user-sebas.webp" alt="" srcset="">
+            <img src="images/user-sebas.webp" alt="" srcset="">
         </div>
         <div class="header-title">Admin</div>
         <div class="header-line"></div>
