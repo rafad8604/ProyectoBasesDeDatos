@@ -10,7 +10,7 @@
 
     <!-- Conexion con la hoja de estilos -->
 
-    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="stylesheet" href="css/estilos.css">
 
      <!-- Conexion con Sweet Alert -->
 
