@@ -88,6 +88,15 @@
                     </a> 
                 </li>
 
+                <br>
+
+                <li>
+                    <a href="recintos.php">
+                    <i class="fa-solid fa-house"></i>
+                    RECINTOS
+                    </a> 
+                </li>
+
             </ul>
 
         </div>
@@ -109,8 +118,8 @@
         <br>
 
         <li>
-            <a href="proyectos.php">
-            <i class="fa-solid fa-feather"></i>
+            <a style="font-weight:bold;" href="proyectos.php">
+            <i style="color:white" class="fa-solid fa-feather"></i>
             PROYECTOS
             </a> 
         </li>
@@ -150,12 +159,7 @@
                 </button>
 
                 <div id="menudd" class="menudd">
-
-                    <!-- <button onclick="handleMenuButtonClicked()">
-                    <span class="material-symbols-outlined"> build </span>
-                    Tools
-                    </button> -->
-                    
+       
                 <button onclick="handleMenuButtonClicked()">
                 
                     <span class="material-symbols-outlined"> lock </span>
@@ -185,9 +189,10 @@
 
      <!-- MODAL RECINTO -->
 
-     <dialog id="modal-ver-recinto" class="modal-estilo">
+     <dialog id="modal-asignar-recinto" class="modal-estilo">
 
     </dialog>
+    
 
     <!-- MODAL JURADO -->
 
@@ -221,7 +226,7 @@
             <tbody>
             <?php
 
-        $sql = "SELECT cod_proye, fecha_pre, recinto, cod_jur, veredicto FROM sustentaciones";
+        $sql = "SELECT cod_proye, fecha_pre, cod_rec, cod_jur, veredicto FROM sustentaciones";
         $query = pg_query($sql);
 
 
@@ -232,7 +237,7 @@
         <!-- CODIGO DE LOS ESTUDIANTES -->
         <th>
          <?php 
-            $sql = "SELECT nomb_est, ape_est FROM estudiantes WHERE cod_proye='$row->cod_proye' order by nomb_est asc";
+            $sql = "SELECT nomb_est, ape_est FROM estudiantes WHERE cod_proye='$row->cod_proye'";
             $queryx = pg_query($sql);
             if(pg_num_rows($queryx)>0){
                while($rowd=pg_fetch_object($queryx)){ ?>
@@ -256,9 +261,22 @@
 
         <!-- RECINTO -->
 
-        <th><?php echo $row->recinto ?></th>
 
-        <th><a class="ver-recinto" value="<?php echo $row->cod_proye ?>"><i class="fa-solid fa-pen"></i></a></th>
+        <th>
+            
+        <?php 
+
+        $sqlr = "SELECT nomb_rec FROM recintos WHERE cod_rec='$row->cod_rec'";
+        $queryr = pg_query($sqlr);
+        if(pg_num_rows($queryr)>0){
+            while($rowr=pg_fetch_object($queryr)){ 
+        
+  
+        echo $rowr->nomb_rec;}} ?>
+    
+        </th>
+
+        <th><a class="asignar-recinto" value="<?php echo $row->cod_proye ?>"><i class="fa-solid fa-pen"></i></a></th>
 
         <!-- JURADOS -->
 

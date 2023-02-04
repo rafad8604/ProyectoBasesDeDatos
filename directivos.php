@@ -9,7 +9,7 @@
 
     <!-- Conexion con la hoja de estilos -->
 
-     <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
 
@@ -83,6 +83,14 @@
                     </a> 
                 </li>
 
+                <br>
+
+                <li>
+                    <a href="recintos.php">
+                    <i class="fa-solid fa-house"></i>
+                    RECINTOS
+                    </a> 
+                </li>
             </ul>
 
         </div>
@@ -175,7 +183,7 @@
         <div class="contenido-modal">
     
         <div class="title-modal">
-           <a href="jurados.php"> <div id="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></div> </a>
+           <div id="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></div> 
         </div>
 
         <form class="formulario" action="insertarDir.php" method="post">

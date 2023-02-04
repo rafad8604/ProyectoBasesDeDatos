@@ -21,30 +21,6 @@
                
              };
 
-
-                // MODAL VER RECINTO
-
-   var ModalEditarRecinto = document.getElementById("modal-ver-recinto");
-   var ModalAbrirEditarRecinto = document.querySelectorAll('.ver-recinto');
-            
-           
-             ModalAbrirEditarRecinto.forEach(button =>{
-           
-               button.addEventListener('click', EditarRecinto);
-             });
-           
-             async function EditarRecinto(e){
-          
-               let datoR = e.currentTarget.getAttribute("value");
-               const dataR = await fetch("modal-fecha-presentacio.php?id="+datoR);
-               const R = await dataR.text();
-           
-               ModalEditarRecinto.innerHTML = R;
-               ModalEditarRecinto.showModal();
-              
-               
-             };
-
              // MODAL VER JURADO
 
   var ModalEditarJurado = document.getElementById("modal-ver-jurado");
@@ -88,3 +64,44 @@
                        
   }
    
+
+    // MODAL EDITAR RECINTO
+
+    var ModalEditarRecinto = document.getElementById("modal-ver-recinto");
+    var ModalAbrirEditarRecinto = document.querySelectorAll('.ver-recinto');
+                       
+    ModalAbrirEditarRecinto.forEach(button =>{
+                      
+    button.addEventListener('click', Recinto);});
+                      
+    async function Recinto(e){
+                     
+    let datoR = e.currentTarget.getAttribute("value");
+    const dataR = await fetch("editarRec.php?id="+datoR);
+    const R = await dataR.text();
+                      
+    ModalEditarRecinto.innerHTML = R;
+    ModalEditarRecinto.showModal();
+                         
+    }
+
+    
+    // MODAL ASIGNAR RECINTO
+
+    var ModalAsignarRecinto = document.getElementById("modal-asignar-recinto");
+    var ModalAbrirAsignarRecinto = document.querySelectorAll('.asignar-recinto');
+                       
+    ModalAbrirAsignarRecinto.forEach(button =>{
+                      
+    button.addEventListener('click', AsignarRecinto);});
+                      
+    async function AsignarRecinto(e){
+                     
+    let datoAR = e.currentTarget.getAttribute("value");
+    const dataAR = await fetch("proyectos-asignar-recinto.php?id="+datoAR);
+    const AR = await dataAR.text();
+                      
+    ModalAsignarRecinto.innerHTML = AR;
+    ModalAsignarRecinto.showModal();
+                         
+    }

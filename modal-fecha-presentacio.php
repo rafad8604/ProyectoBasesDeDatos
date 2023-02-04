@@ -22,7 +22,7 @@ $row = pg_fetch_object($query);
 
     <!-- Conexion con la hoja de estilos -->
 
-    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="../../public/css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
 
@@ -32,7 +32,7 @@ $row = pg_fetch_object($query);
 
     <script src="https://kit.fontawesome.com/ccd4ed56f8.js" crossorigin="anonymous"></script>
 
-    <script src="main.js"></script>
+    <script src="../../main.js"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,16 +41,27 @@ $row = pg_fetch_object($query);
 </head>
 <body>
 
-    <form action="updateFechaProye.php" method="POST">
+<div class="numberCircle">
+            <img src="images/edit.png" alt="" srcset="">
+        </div>
+
+<div class="contenedor-modal">
+
+<div class="title-modal">
+        <a href="proyectos.php">    <div id="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></div></a>
+        </div>
+
+
+    <form class="formulario" action="updateFechaProye.php" method="POST">
 
     <input type="hidden" name="codigo" value="<?php echo $row->cod_proye ?>">
    
-    <input type="date" name="fecha" value="<?php echo $row->fecha_pre ?>">
+    <input class="date-fecha" type="date" name="fecha" value="<?php echo $row->fecha_pre ?>">
    
-    <input type="submit" value="Actualizar">
+    <input type="submit" value="Editar">
     </form>
     
-    
+</div>
  
 </body>
 </html>

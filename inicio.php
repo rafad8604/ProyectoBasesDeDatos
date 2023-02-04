@@ -87,6 +87,15 @@
                     </a> 
                 </li>
 
+                <br>
+
+                <li>
+                    <a href="recintos.php">
+                    <i class="fa-solid fa-house"></i>
+                    RECINTOS
+                    </a> 
+                </li>
+
             </ul>
 
         </div>

@@ -23,7 +23,7 @@
 
     <script src="https://kit.fontawesome.com/ccd4ed56f8.js" crossorigin="anonymous"></script>
 
-    <script src="main.js"></script>
+    <script src="../../main.js"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -84,6 +84,15 @@
             </a> 
         </li>
 
+        <br>
+
+        <li>
+            <a href="recintos.php">
+            <i class="fa-solid fa-house"></i>
+            RECINTOS
+            </a> 
+        </li>
+
     </ul>
 
 </div>
@@ -114,8 +123,8 @@
 <br>
 
 <li>
-    <a href="sustentaciones.php">
-    <i class="fa-regular fa-comments"></i>
+    <a  style="font-weight:bold;" href="sustentaciones.php">
+    <i style="color:white" class="fa-regular fa-comments"></i>
     SUSTENTACIONES 
     </a> 
 </li>
@@ -146,12 +155,7 @@
     </button>
 
     <div id="menudd" class="menudd">
-
-        <!-- <button onclick="handleMenuButtonClicked()">
-        <span class="material-symbols-outlined"> build </span>
-        Tools
-        </button> -->
-        
+             
     <button onclick="handleMenuButtonClicked()">
     
         <span class="material-symbols-outlined"> lock </span>
@@ -176,10 +180,10 @@
         <table class="table-template-sustentaciones">
             <thead>
                 <tr class="header-table">
-                    <th colspan="5">SIN NOMBRE  </th>
+                    <th colspan="5">HISTORIAL</th>
                 </tr>
                 <tr class="header-table-row">
-                    <th>Estudiantes</th>
+                    <th>Nombre Estudiante</th>
                     <th>Nombre Proyecto</th>
                     <th>Nombre Jurado</th>
                     <th>Nombre Director</th> 
@@ -189,7 +193,7 @@
             <tbody>
             <?php
 
-        $sql = "SELECT cod_proye, fecha_pre, recinto, cod_jur, veredicto FROM sustentaciones WHERE veredicto is not NULL";
+        $sql = "SELECT nombre_estudiante, nombre_jurado, nombre_director, nombre_proyecto, veredicto, porque FROM historial";
         $query = pg_query($sql);
 
 
@@ -199,52 +203,42 @@
     <tr>
         <!-- NOMBRE DE LOS ESTUDIANTES -->
         <th>
-            <?php 
-            $sql = "SELECT nomb_est, ape_est FROM estudiantes WHERE cod_proye='$row->cod_proye' order by nomb_est asc";
-            $queryx = pg_query($sql);
-            if(pg_num_rows($queryx)>0){
-                while($rowd=pg_fetch_object($queryx)){ ?>
-
-           
-                <?php echo $rowd->nomb_est; ?><br>
             
+            <?php echo $row->nombre_estudiante ?>
 
-             <?php   }}  ?>
-             </th>
+        </th>
 
         <!-- NOMBRE PROYECTO -->
 
-        <?php $sql = "SELECT nomb_proye FROM proyectos WHERE cod_proye ='$row->cod_proye'";
-        $queryt = pg_query($sql);
-        $rowt=pg_fetch_object($queryt)
-        ?>
-
-             <th><?php echo $rowt->nomb_proye?></th>
+        <th>
+            
+        <?php echo $row->nombre_proyecto ?>
+    
+        </th>
 
         <!-- NOMBRE JURADO -->
 
-        <?php $sql = "SELECT nomb_jur FROM jurados WHERE cod_jur='$row->cod_jur'";
-        $queryp = pg_query($sql);
-        $rowp=pg_fetch_object($queryp)
-        ?>
-        
-        <th><?php echo $rowp->nomb_jur?></th>
+        <th>
+            
+        <?php echo $row->nombre_jurado?>
+    
+        </th>
         
         <!-- NOMBRE DIRECTOR -->
-        
-        <?php 
-        $sql = "SELECT nomb_dir FROM directores WHERE cod_dir in(SELECT cod_dir FROM proyectos WHERE cod_proye='$row->cod_proye')";
-        $queryxy = pg_query($sql);
-        $rowxy=pg_fetch_object($queryxy);
-        ?>
-
-        <th><?php echo $rowxy->nomb_dir?></th>
+    
+        <th>
+            
+        <?php echo $row->nombre_director ?>
+    
+        </th>
       
         <!-- VEREDCITO -->
 
-        <th><?php echo $row->veredicto ?></th>
-
-      
+        <th> 
+            
+        <?php echo $row->veredicto ?>
+    
+        </th>
         
     </tr>
 

@@ -22,7 +22,7 @@ $row = pg_fetch_object($query);
 
     <!-- Conexion con la hoja de estilos -->
 
-     <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="../../public/css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
 
@@ -56,7 +56,7 @@ $row = pg_fetch_object($query);
     <input class="enjoy-css" type="date" name="fecha" value="<?php echo $row->fecha_pro ?>">
     <input class="enjoy-css" type="text" name="descripcion" placeholder="Descripcion" value="<?php echo $row->descripcion ?>">
     
-    <input type="submit" value="Actualizar">
+    <input type="submit" value="Editar">
     </form>
     
     </div>

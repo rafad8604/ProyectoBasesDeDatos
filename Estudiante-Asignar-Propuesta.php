@@ -52,7 +52,7 @@ $cod_proye=$_GET['id'];
 
     <form action="asignarEst.php" method="POST">
 
-    <select name="agregarEst" id="form-propuestas">
+    <select class="select" name="agregarEst" id="form-propuestas">
         <option>---------Selecione un estudiante----------</option> 
         <?php
                                         $sql="SELECT cod_est, nomb_est, ape_est FROM estudiantes WHERE cod_proye is null";

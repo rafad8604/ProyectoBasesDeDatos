@@ -19,14 +19,18 @@
 
     <script src="https://kit.fontawesome.com/ccd4ed56f8.js" crossorigin="anonymous"></script>
 
-    <script src="main.js"></script>
+    <!-- Conexion con los scripts -->
 
-     <!-- Estilos externos -->
-
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" /> 
+ 
+ 
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
+    /> 
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unillanos - DashBoard</title>
 </head>
@@ -68,8 +72,8 @@
                 <br>
 
                 <li>
-                    <a style="font-weight:bold;" href="jurados.php">
-                    <i style="color:white" class="fa-solid fa-puzzle-piece"></i>
+                    <a href="jurados.php">
+                    <i class="fa-solid fa-puzzle-piece"></i>
                     JURADOS
                     </a> 
                 </li>
@@ -86,8 +90,8 @@
                 <br>
 
                 <li>
-                    <a href="recintos.php">
-                    <i class="fa-solid fa-house"></i>
+                    <a style="font-weight:bold;" href="#">
+                    <i style="color:white;" class="fa-solid fa-house"></i>
                     RECINTOS
                     </a> 
                 </li>
@@ -131,61 +135,61 @@
     </ul>
 
 </div>
+
+        
     </aside>
 
     <header>
-      
-    <div class="header-title">
-
-<div class="botondd">
-
-    <div class="split-button">
-
-    <button></button>
-
-    <button onclick="toggleDropdown()">
-
-        <span id="chevron">
-        <img style="opacity:0.5" src="images/profile.png" alt="" srcset="">
-        </span>
-
-    </button>
-
-    <div id="menudd" class="menudd">
-
-        <!-- <button onclick="handleMenuButtonClicked()">
-        <span class="material-symbols-outlined"> build </span>
-        Tools
-        </button> -->
-        
-    <button onclick="handleMenuButtonClicked()">
     
-        <span class="material-symbols-outlined"> lock </span>
-        Cerrar Sesión
-        </button>
+        <div class="header-title">
 
-    </div>
+            <div class="botondd">
 
-</div>
+                <div class="split-button">
 
-</div>
+                <button></button>
+
+                <button onclick="toggleDropdown()">
+
+                    <span id="chevron">
+                        <img style="opacity:0.5" src="images/profile.png" alt="" srcset="">
+                    </span>
+
+                </button>
+
+                <div id="menudd" class="menudd">
+                    
+                <button onclick="handleMenuButtonClicked()">
+                
+                    <span class="material-symbols-outlined"> lock </span>
+                    Cerrar Sesión
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
 
 
-</div>
+        </div>
+     
 
     </header>
+    
     <main>
 
-    <!-- AGREGAR JURADOS -->
-
+    
     <div class="boton-crear-alumno">
-        <button id="btn-abrir-modal" class="btn-create-alumno">Crear Jurado</button>
+        <button id="btn-abrir-modal" class="btn-create-alumno">Crear Recinto</button>
     </div>
 
-    <dialog class="container-form sign-in" id="modal">
+    <!-- AGREGAR ESTUDIANTES -->
 
-    <div class="numberCircle">
-            <img src="images/add.png" alt="" srcset="">
+    <dialog id="modal" class="modal-estilo">
+
+        <div class="numberCircle">
+            <img src="images/casa.png" alt="" srcset="">
         </div>
 
         <div class="contenido-modal">
@@ -194,63 +198,57 @@
             <div id="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></div>
         </div>
 
-        <form class="formulario" action="insertarJur.php" method="post">
-        <input class="enjoy-css" type="text" pattern="[0-9]+" required name="dni" placeholder="Dni">
-        <input class="enjoy-css" type="text" pattern="[a-zA-Z ]+" required name="nomb_jur" placeholder="Nombre">
-        <input class="enjoy-css" type="text" pattern="[a-zA-Z ]+" required name="ape_jur" placeholder="Apellido">
-        <input class="sign-in-btn" type="submit" value="Crear">
-        </form>
+            <form class="formulario" action="insertarRec.php" method="post">
+
+            <input class="enjoy-css" type="text" required name="nomb_rec" placeholder="Nombre">
+            <input class="enjoy-css" type="text" required name="dir_rec" placeholder="Direccion">
+
+            <input class="sign-in-btn" type="submit" value="Crear">
+            </form>
 
         </div>
+       
+    </dialog>
+
+     <!-- ASIGNAR RECINTOS -->
+
+    <dialog id="modal-ver-recinto" class="modal-estilo"> 
+
+    </dialog>
+
     
-        
-        
-
-        
-
-         <!-- EDITAR JURADOS -->
-
-    </dialog>
-
-
-    <dialog id="modal-editar-Jur" class="modal-estilo"> 
-
-    </dialog>
-
     <div class="table-contenido">
         <table class="table-template">
             <thead>
-                <tr class="header-table">
-                    <th colspan="6">JURADOS</th>
+                <tr  >
+                    <th colspan="4">RECINTOS</th>
                 </tr>
-                <tr>
+                
+                <tr class="header-table-row">
                     <th>Codigo</th>
-                    <th>Dni</th>
                     <th>Nombre</th>
-                    <th>Apellido</th>
+                    <th>Direccion</th>
                     <th style="width:10%">Acciones</th>
-
                 </tr>
-
             </thead>
             <tbody>
                 <?php
-                $sql = "SELECT cod_jur, dni, nomb_jur, ape_jur FROM jurados";
+                $sql = "SELECT cod_rec, nomb_rec, dir_rec FROM recintos";
                 $query = pg_query($conect, $sql);
 
                 if(pg_num_rows($query)>0){
                 while($row=pg_fetch_object($query)){
                 ?>
                 <tr>
-                    <td><?php echo $row->cod_jur?></td>
-                    <td><?php echo $row->dni?></td>
-                    <td><?php echo $row->nomb_jur?></td>
-                    <td><?php echo $row->ape_jur?></td>
+                    <td><?php echo $row->cod_rec?></td>
+                    <td><?php echo $row->nomb_rec?></td>
+                    <td><?php echo $row->dir_rec?></td>
+                  
                     <td class="table-icons-enlace">
-                        <a class="btn-abrir-modal-editar-Jur" value="<?php echo $row->cod_jur ?>">
-                            <i  value="<?php echo $row->cod_jur ?>" class="fa-solid fa-pen"></i>
+                        <a class="ver-recinto" value="<?php echo $row->cod_rec ?>">
+                            <i  value="<?php echo $row->cod_est ?>" class="fa-solid fa-pen"></i>
                         </a>
-                        <a class="btn-abrir-modal-delete" href="borrarJur.php?id=<?php echo $row->cod_jur ?>">
+                        <a class="btn-abrir-modal-delete" href="borrarEst.php?id=<?php echo $row->cod_rec ?>">
                             <i class="fa-solid fa-trash"></i>
                         </a>
                     </td>
@@ -261,11 +259,16 @@
             </tbody>
         </table>
 
+    </div>
+   
+    
     </main>
 
+ 
 </div> 
   
-<script src="dropdown.js"></script>
+   
 <script src="main.js"></script>
+<script src="modal-proyectos.js"></script>
 </body>
 </html>

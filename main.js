@@ -6,20 +6,21 @@ var btnAbrirModal = document.getElementById('btn-abrir-modal');
 var btnCerrarModal = document.getElementById('btn-cerrar-modal');
 var modal = document.getElementById('modal');
 
+
+
 btnAbrirModal.addEventListener("click", function(){
   modal.showModal();
-
 });
 
-btnCerrarModal.addEventListener("click", function(){
-  modal.close();
-});
+ btnCerrarModal.addEventListener("click", function(){
+    modal.close();
+ });
 
 // MODAL EDITAR - ESTUDIANTE
 
   var ModalEditar = document.getElementById("modal-editar");
   var ModalEditOpen = document.querySelectorAll('.btn-abrir-modal-editar');
- 
+  
 
   ModalEditOpen.forEach(button =>{
 
@@ -36,6 +37,11 @@ btnCerrarModal.addEventListener("click", function(){
     ModalEditar.showModal();
     
   };
+
+  // btnCerrarModal.addEventListener("click", function(){
+  //   modal.close();
+  //   ModalEditar.close();
+  // });
 
   // MODAL EDITAR - JURADOS
 
@@ -169,7 +175,7 @@ btnCerrarModal.addEventListener("click", function(){
      
      let datoE = e.currentTarget.getAttribute("value");
    
-     const dataE = await fetch("visualizarEstudiante.php?id="+datoE);
+     const dataE = await fetch("VisualizarEstudiante.php?id="+datoE);
      const E = await dataE.text();
  
      ModalEstudiante.innerHTML = E;

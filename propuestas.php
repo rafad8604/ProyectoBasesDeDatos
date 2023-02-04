@@ -10,7 +10,7 @@
 
     <!-- Conexion con la hoja de estilos -->
 
-     <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
 
@@ -79,6 +79,15 @@
                     <a href="directivos.php">
                     <i class="fa-solid fa-chalkboard-user"></i>
                     DIRECTORES
+                    </a> 
+                </li>
+
+                <br>
+
+                <li>
+                    <a href="recintos.php">
+                    <i class="fa-solid fa-house"></i>
+                    RECINTOS
                     </a> 
                 </li>
 
@@ -263,7 +272,7 @@
             <tbody>
             <?php
 
-        $sql = "SELECT cod_proye, nomb_proye, descripcion, fecha_pro, cod_dir, estado, cod_est FROM proyectos";
+        $sql = "SELECT cod_proye, nomb_proye, descripcion, fecha_pro, cod_dir, estado FROM proyectos";
         $query = pg_query($conect, $sql);
 
         if(pg_num_rows($query)>0){

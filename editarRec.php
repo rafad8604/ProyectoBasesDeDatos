@@ -5,7 +5,7 @@ include("connection.php");
 session_start();
 
 $codigo = $_GET['id'];
-$sql="SELECT dni, nomb_est, ape_est FROM estudiantes WHERE cod_est='$codigo'";
+$sql="SELECT nomb_rec, dir_rec FROM recintos WHERE cod_rec='$codigo'";
 $query = pg_query($sql);
 $rowd = pg_fetch_object($query);
 
@@ -34,16 +34,15 @@ $rowd = pg_fetch_object($query);
         <div class="contenido-modal">
 
         <div class="title-modal">
-          <a href="estudiantes.php"> <div id="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></div></a> 
+          <a href="recintos.php"> <div id="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></div></a> 
         </div>
 
-        <form class="formulario "action="updateEst.php" method="POST">
+        <form class="formulario "action="updateRec.php" method="POST">
 
         <input value="<?php echo $codigo ?>" type="hidden" name="codigo">
 
-        <input class="enjoy-css" type="text" name="dni" placeholder="Dni" value="<?php echo $rowd->dni ?>">
-        <input class="enjoy-css" type="text" name="nombres" placeholder="Nombres" value="<?php echo $rowd->nomb_est ?>">
-        <input class="enjoy-css" type="text" name="apellidos" placeholder="Apellidos" value="<?php echo $rowd->ape_est ?>">
+        <input class="enjoy-css" type="text" name="nombres" placeholder="Nombre" value="<?php echo $rowd->nomb_rec ?>">
+        <input class="enjoy-css" type="text" name="Direccion" placeholder="Direccion" value="<?php echo $rowd->dir_rec ?>">
 
         <input class="sign-in-btn" type="submit" value="Editar">
 
@@ -58,13 +57,3 @@ $rowd = pg_fetch_object($query);
 
 </body>
 </html>
-
-
-
-        
-        
-      
-
-       
-
-      

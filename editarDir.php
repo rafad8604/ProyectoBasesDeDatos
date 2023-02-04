@@ -31,7 +31,7 @@ $rowd = pg_fetch_object($query);
             <img src="images/edit.png" alt="" srcset="">
         </div>
 
-        <div class="contenido-modal">
+        <div class="contenido-modal">   
 
         <div class="title-modal">
            <a href="directivos.php"> <div id="btn-cerrar-modal"><i class="fa-solid fa-xmark"></i></div> </a>

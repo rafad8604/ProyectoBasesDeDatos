@@ -3,22 +3,11 @@
 include("connection.php");
 session_start();
 
-$cod_proye=$_GET['id'];
-$sql = "SELECT count(*) FROM proyectos WHERE cod_proye = '$cod_proye' AND cod_dir is not null";
-$query = pg_query($sql);  
-$query = pg_fetch_result($query, 0, 0);
+$cod_propu=$_GET['id'];
+$sql = "SELECT * FROM propuestas WHERE cod_propu='$cod_propu'";
+$consulta = pg_query($conect, $sql);  
 
-if($query >= 1){
-
-    include_once  "proyectos.php";
-    echo '<script> Swal.fire({
-      icon: "error",
-      title: "Error!",
-      text: "El proyecto ya tiene asignado un director",
-    });</script>';
-    }
-        
-   
+$row = pg_fetch_object($consulta);
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +52,7 @@ if($query >= 1){
 
         <div class="dashboard">
 
-            <a href="#">
+            <a href="inicio.php">
             <i class="fa-solid fa-house"></i>
             Dashboard
             </a>
@@ -110,39 +99,37 @@ if($query >= 1){
 
         <div class="aside-interface">Proyectos de grado</div>
 
-        <div class="aside-componentes">
-            
-            <ul>
-                <li>
-                    <a href="propuestas.php">
-                    <i class="fa-solid fa-file-pen"></i>
-                    Propuestas de grado
-                    </a> 
-                </li>
-                
-                <br>
+<div class="aside-componentes">
+    
+    <ul>
+        <li>
+            <a href="propuestas.php">
+            <i class="fa-solid fa-file-pen"></i>
+            Propuestas de grado
+            </a> 
+        </li>
+        
+        <br>
 
-                <li>
-                    <a href="proyectos.php">
-                    <i class="fa-solid fa-feather"></i>
-                    Proyectos
-                    </a> 
-                </li>
+        <li>
+            <a href="proyectos.php">
+            <i class="fa-solid fa-feather"></i>
+            Proyectos
+            </a> 
+        </li>
 
-                <br>
+        <br>
 
-                <li>
-                    <a href="sustentaciones.php">
-                    <i class="fa-regular fa-comments"></i>
-                    Sustentaciones 
-                    </a> 
-                </li>
+        <li>
+            <a href="sustentaciones.php">
+            <i class="fa-regular fa-comments"></i>
+            Sustentaciones 
+            </a> 
+        </li>
 
-            </ul>
+    </ul>
 
-        </div>
-
-
+</div>
         
     </aside>
 
@@ -154,24 +141,17 @@ if($query >= 1){
         <div class="header-line"></div>
     </header>
     <main>
+        
+      <form action="updatePropu.php" method="POST">
 
-    <form action="asignarDir.php" method="POST">
+        <input type="hidden" name="codigo" value="<?php echo $row->cod_propu ?>">
 
-        <select name="agregarDir" id="form-propuestas">
-            <option>---------Selecione un director----------</option> 
-            <?php
-                                            $sql="SELECT cod_dir, nomb_dir, ape_dir FROM directores";
-                                            $query=pg_query($sql);
-                                            while($row = pg_fetch_array($query)){
-                                               echo '<option value="'.$row['cod_dir'].'">'.$row['cod_dir'].'   '.$row['nomb_dir'].'  '.$row['ape_dir'].' '.'</option>';
-                                                
-                                          }
-                                        ?>
-         </select>  
-         <input type="hidden" name="cod_proye" value="<?php echo $cod_proye=$_GET['id'];?>">
-          <input type="submit" value="submit">                                  
-    </form>
-    
+          <input type="date" name="fecha" value="<?php echo $row->fecha_pro ?>">
+          <input type="text" name="descripcion" placeholder="Descripcion" value="<?php echo $row->descripcion ?>">
+          
+        <input type="submit" value="Actualizar">
+      </form>
+
     </main>
 
 </div> 
