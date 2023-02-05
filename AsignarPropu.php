@@ -16,7 +16,7 @@ session_start();
 
     <!-- Conexion con la hoja de estilos -->
 
-    <link rel="stylesheet" href="/css/inicio.css">
+    <link rel="stylesheet" href="css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
 
@@ -40,7 +40,7 @@ session_start();
     <aside>
 
         <div class="aside-logo">
-                <img src="/images/logounillanos.png" alt="">
+                <img src="images/logounillanos.png" alt="">
         </div>
 
         <div class="line"></div>
@@ -132,7 +132,7 @@ session_start();
 
     <header>
         <div class="header-login">
-            <img src="/images/user-sebas.webp" alt="" srcset="">
+            <img src="images/user-sebas.webp" alt="" srcset="">
         </div>
         <div class="header-title">Admin</div>
         <div class="header-line"></div>
