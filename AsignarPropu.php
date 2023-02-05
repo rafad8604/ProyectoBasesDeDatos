@@ -16,7 +16,7 @@ session_start();
 
     <!-- Conexion con la hoja de estilos -->
 
-    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="../../public/css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
 
@@ -26,7 +26,7 @@ session_start();
 
     <script src="https://kit.fontawesome.com/ccd4ed56f8.js" crossorigin="anonymous"></script>
 
-    <script src="main.js"></script>
+    <script src="../../main.js"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,7 +40,7 @@ session_start();
     <aside>
 
         <div class="aside-logo">
-                <img src="images/logounillanos.png" alt="">
+                <img src="../../public/images/logounillanos.png" alt="">
         </div>
 
         <div class="line"></div>
@@ -132,7 +132,7 @@ session_start();
 
     <header>
         <div class="header-login">
-            <img src="images/user-sebas.webp" alt="" srcset="">
+            <img src="../../public/images/user-sebas.webp" alt="" srcset="">
         </div>
         <div class="header-title">Admin</div>
         <div class="header-line"></div>
