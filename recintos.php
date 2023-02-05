@@ -220,7 +220,7 @@
     <div class="table-contenido">
         <table class="table-template">
             <thead>
-                <tr  >
+                <tr  class="header-table" >
                     <th colspan="4">RECINTOS</th>
                 </tr>
                 
