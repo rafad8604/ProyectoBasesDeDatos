@@ -9,7 +9,7 @@
 
     <!-- Conexion con la hoja de estilos -->
 
-    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="/css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
 
@@ -41,7 +41,7 @@
     <aside>
 
     <div class="aside-logo">
-                <img src="images/logounillanos.png" alt="">
+                <img src="/images/logounillanos.png" alt="">
         </div>
 
         <div class="line"></div>
