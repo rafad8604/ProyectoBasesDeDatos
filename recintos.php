@@ -248,9 +248,9 @@
                   
                     <td class="table-icons-enlace">
                         <a class="ver-recinto" value="<?php echo $row->cod_rec ?>">
-                            <i  value="<?php echo $row->cod_est ?>" class="fa-solid fa-pen"></i>
+                            <i  value="<?php echo $row->cod_rec ?>" class="fa-solid fa-pen"></i>
                         </a>
-                        <a class="btn-abrir-modal-delete" href="borrarEst.php?id=<?php echo $row->cod_rec ?>">
+                        <a class="btn-abrir-modal-delete" href="borrarRec.php?id=<?php echo $row->cod_rec ?>">
                             <i class="fa-solid fa-trash"></i>
                         </a>
                     </td>
