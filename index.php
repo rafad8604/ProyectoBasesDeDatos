@@ -20,7 +20,8 @@
 
     <script src="https://kit.fontawesome.com/ccd4ed56f8.js" crossorigin="anonymous"></script>
 
-
+     <link rel="shortcut icon" type="image/x-icon" sizes="128x128" href="images/favicon.png">
+    
     <script src="main.js"></script>
 
     <meta charset="UTF-8">
