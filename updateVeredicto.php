@@ -90,19 +90,25 @@ if(empty($query)){
 
             // ESTUDIANTE
             
-            $sqlEstudiante = "SELECT nomb_est FROM estudiantes WHERE cod_proye = '$codigo'";
+            $sqlEstudiante = "SELECT nomb_est, ape_est FROM estudiantes WHERE cod_proye = '$codigo'";
             $queryEstudiante = pg_query($sqlEstudiante);
             $vectorEstudiante = pg_fetch_all($queryEstudiante);
   
             // ENVIO DE LOS DATOS
 
             foreach ($vectorEstudiante as $estudiante) {
-            $nombre = $estudiante["nomb_est"];
+            $nombre = $estudiante["nomb_est"] ." ". $estudiante["ape_est"];
             $inserto = "INSERT INTO historial VALUES ('$nombre','$Jurado','$Director','$Proyecto','$Veredicto','$Razon')";
             pg_query($inserto);
             }
 
-            //
+            // DESIGNACION DE PROYECTO
+
+            $Clean = "UPDATE estudiantes set cod_proye=null WHERE cod_proye='$codigo'";
+            $CleanDir = "UPDATE proyectos set cod_dir=null WHERE cod_proye='$codigo'";
+            $queryClean = pg_query($Clean);
+            $queryClean = pg_query($CleanDir);
+            
 
               include_once  "proyectos.php";
               echo '<script> Swal.fire({
