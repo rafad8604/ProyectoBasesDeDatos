@@ -24,6 +24,8 @@
      <!-- Scripts -->
 
     <script src="main.js"></script>
+    
+     <link rel="shortcut icon" type="image/x-icon" sizes="128x128" href="images/favicon.png">
 
      <!-- Estilos externos -->
 
