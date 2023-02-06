@@ -10,23 +10,45 @@ $fecha =$_POST['fecha'];
 
 $sql = "SELECT veredicto FROM sustentaciones WHERE cod_proye='$codigo'";
 $query = pg_query($sql);
-$query = pg_fetch_result($query, 0, 0);
+$vacio = pg_fetch_result($query, 0, 0);
 
-if(empty($query)){
+if(empty($vacio)){
+
+ 
+  $sqlFechaPre = "SELECT fecha_pro FROM proyectos WHERE cod_proye='$codigo'";
+  $queryFechaPre = pg_query($sqlFechaPre);
+
+  $fechaTimestamp = strtotime($fecha);
+  $fechaPre = pg_fetch_result($queryFechaPre, 0, 0);
+  $fechaPreTimestamp = strtotime($fechaPre);
+
+  //fechaTimesTamp es la fecha que para exposicion
+  //FechaPreTimestamp es la fecha en que se creo la propuestas
+
+  if ($fechaTimestamp >= $fechaPreTimestamp) {
 
     $sql="UPDATE sustentaciones SET fecha_pre='$fecha' WHERE cod_proye='$codigo'";
-    $query = pg_query($sql);  
-    
-    if($query){
-       
-        include_once  "proyectos.php";
-        echo '<script> Swal.fire({
-            icon: "success",
-            title: "Buen trabajo!",
-            text: "Se actualizo de manera correcta la fecha del proyecto",
-          });</script>';
-    }
-    
+    $query = pg_query($sql);
+
+
+    include_once  "proyectos.php";
+    echo '<script> Swal.fire({
+        icon: "success",
+        title: "Buen trabajo!",
+        text: "Se asigno una fecha de exposicion",
+      });</script>';
+
+  } else {
+
+     include_once  "proyectos.php";
+     echo '<script> Swal.fire({
+        icon: "error",
+        title: "Error",
+         text: "La fecha de exposicion no puede ser menor a la fecha de creacion",
+     });</script>';
+
+  } 
+
 
 }else{
 
