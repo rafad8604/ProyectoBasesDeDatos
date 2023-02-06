@@ -34,7 +34,7 @@ if($query == "SI" || $query == "NO"){
     
           
        
-      echo " )}});</script>";
+
 
         }else{
           include_once  "proyectos.php";
