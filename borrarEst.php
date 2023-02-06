@@ -11,7 +11,7 @@ $query = pg_query($sql);
 $consulta = pg_fetch_result($query, 0, 0);
 
 if($consulta >= 1){
-  include_once  "../views/estudiantes.php";
+  include_once  "estudiantes.php";
           echo '<script> Swal.fire({
               icon: "error",
               title: "Error",
@@ -23,7 +23,7 @@ if($consulta >= 1){
    
   if($query){
   
-      include_once  "../views/estudiantes.php";
+      include_once  "estudiantes.php";
       echo '<script> Swal.fire({
         icon: "success",
         title: "Buen trabajo!",
@@ -34,7 +34,7 @@ if($consulta >= 1){
 
   
           }else{
-            include_once  "../views/estudiantes.php";
+            include_once  "estudiantes.php";
             echo '<script> Swal.fire({
                 icon: "error",
                 title: "Error al borrar al estudiante",
