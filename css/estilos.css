@@ -3,6 +3,10 @@
     src: url(../fonts/SF-Pro-Display-Bold.ttf);
 }
 
+body.swal2-height-auto {
+    /* height: auto !important; */
+}
+
 *{
     box-sizing: border-box;
     font-family:'SF-Pro-Display' ;
