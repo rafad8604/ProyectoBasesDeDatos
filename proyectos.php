@@ -14,6 +14,8 @@
     <!-- Conexion con Sweet Alert -->
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+     <link rel="shortcut icon" type="image/x-icon" sizes="128x128" href="images/favicon.png">
 
     <!-- Conexion con icons Awesome Fonts -->
 
