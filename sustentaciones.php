@@ -13,6 +13,8 @@
 
     <!-- Conexion con la hoja de estilos -->
 
+   <link rel="shortcut icon" type="image/x-icon" sizes="128x128" href="images/favicon.png">
+ 
     <link rel="stylesheet" href="css/inicio.css">
 
     <!-- Conexion con Sweet Alert -->
