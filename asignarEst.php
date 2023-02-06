@@ -33,8 +33,7 @@ if($query == "Proyecto" || $query == "Rechazada"){
     });</script>';
     
           
-       
-      echo " )}});</script>";
+  
 
         }else{
           include_once  "propuestas.php";
