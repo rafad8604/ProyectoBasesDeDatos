@@ -23,7 +23,7 @@
 
     <script src="https://kit.fontawesome.com/ccd4ed56f8.js" crossorigin="anonymous"></script>
 
-    <script src="main.js"></script>
+    <script src="../../main.js"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -180,7 +180,7 @@
         <table class="table-template-sustentaciones">
             <thead>
                 <tr class="header-table">
-                    <th colspan="5">HISTORIAL</th>
+                    <th colspan="6">HISTORIAL</th>
                 </tr>
                 <tr class="header-table-row">
                     <th>Nombre Estudiante</th>
@@ -188,6 +188,7 @@
                     <th>Nombre Jurado</th>
                     <th>Nombre Director</th> 
                     <th>Veredicto</th>
+                    <th>Razon</th>
                 </tr>
             </thead>
             <tbody>
@@ -202,53 +203,57 @@
 
     <tr>
         <!-- NOMBRE DE LOS ESTUDIANTES -->
-        <th>
+        <td>
             
             <?php echo $row->nombre_estudiante ?>
 
-        </th>
+        </td>
 
         <!-- NOMBRE PROYECTO -->
 
-        <th>
+        <td>
             
         <?php echo $row->nombre_proyecto ?>
     
-        </th>
+        </td>
 
         <!-- NOMBRE JURADO -->
 
-        <th>
+        <td>
             
         <?php echo $row->nombre_jurado?>
     
-        </th>
+        </td>
         
         <!-- NOMBRE DIRECTOR -->
     
-        <th>
+        <td>
             
         <?php echo $row->nombre_director ?>
     
-        </th>
+        </td>
       
         <!-- VEREDCITO -->
 
-        <th> 
+        <td> 
             
         <?php echo $row->veredicto ?>
     
-        </th>
+        </td>
         
+        <td id="razon"> 
+            
+        <?php echo $row->porque ?>
+    
+        </td>
     </tr>
 
 <?php }} ?>
             </tbody>
         </table>
 
-     <br>
     </div>
-<div class="en-blanco"></div>     
+
     </main>
 
 </div> 
