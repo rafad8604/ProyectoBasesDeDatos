@@ -20,7 +20,7 @@
 
     <script src="https://kit.fontawesome.com/ccd4ed56f8.js" crossorigin="anonymous"></script>
 
-    <script src="main.js"></script>
+    <script src="../../main.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 
@@ -272,7 +272,7 @@
             <tbody>
             <?php
 
-        $sql = "SELECT cod_proye, nomb_proye, descripcion, fecha_pro, cod_dir, estado FROM proyectos";
+        $sql = "SELECT cod_proye, nomb_proye, descripcion, fecha_pro, cod_dir, estado FROM proyectos ORDER BY nomb_proye ASC";
         $query = pg_query($conect, $sql);
 
         if(pg_num_rows($query)>0){
@@ -280,53 +280,59 @@
 
     <tr>
         
-        <th><?php echo $row->cod_proye?></th>
-        <th> <a class="ver-propuesta" value="<?php echo $row->cod_proye?>"><?php echo $row->nomb_proye?></a></th>
-        <th><?php echo $row->estado?></th>
+        <td><?php echo $row->cod_proye?></td>
+        <td> <a class="ver-propuesta" value="<?php echo $row->cod_proye?>"><?php echo $row->nomb_proye?></a></td>
+        <td><?php echo $row->estado?></td>
 
         <!-- DIRECTORES -->
 
-        <th><a class="ver-director" value="<?php echo $row->cod_dir?>"><i class="fa-solid fa-chalkboard-user"></i></a></th>
+        <td><a class="ver-director" value="<?php echo $row->cod_dir?>"><i class="fa-solid fa-chalkboard-user"></i></a></td>
 
-        <th>
-            <a class="Asignar-director" value="<?php echo $row->cod_proye?>"><i class="fa-solid fa-user-plus"></i></a>
+        <td>
+            
             <a href="DesignarProy.php?id=<?php echo $row->cod_proye ?>" class="form-boton-delete"><i class="fa-solid fa-user-xmark"></i></a>
-        </th>
+            <a class="Asignar-director" value="<?php echo $row->cod_proye?>"><i class="fa-solid fa-user-plus"></i></a>
+
+        </td>
 
         <!-- ESTUDIANTES -->
 
-        <th><a class="ver-estudiante" value="<?php echo $row->cod_proye?>"><i class="fa-solid fa-graduation-cap"></i></a></th>
+        <td><a class="ver-estudiante" value="<?php echo $row->cod_proye?>"><i class="fa-solid fa-graduation-cap"></i></a></td>
 
-        <th>
-            <a class="Asignar-estudiante" value="<?php echo $row->cod_proye ?>"><i class="fa-solid fa-user-plus"></i></a>
+        <td>
+            
             <a class="Designar-estudiante"  value="<?php echo $row->cod_proye ?>"><i class="fa-solid fa-user-xmark"></i></a>
-        </th>
+            <a class="Asignar-estudiante" value="<?php echo $row->cod_proye ?>"><i class="fa-solid fa-user-plus"></i></a>
+
+        </td>
 
         <!-- ACCIONES -->
 
-        <th>
+        <td>
         
-            <!-- ACEPTAR -->
-            <a href="AceptarPropu.php?id=<?php echo $row->cod_proye ?>" class="form-boton-up"><i class="fa-solid fa-thumbs-up"></i></a>
             <!-- RECHAZAR -->
             <a href="rechazarPropu.php?id=<?php echo $row->cod_proye ?>" class="form-boton-delete"><i class="fa-solid fa-thumbs-down"></i></a>
+
+            <!-- ACEPTAR -->
+            <a href="AceptarPropu.php?id=<?php echo $row->cod_proye ?>" class="form-boton-up"><i class="fa-solid fa-thumbs-up"></i></a>
+            
             <!-- EDITAR -->
             <a value="<?php echo $row->cod_proye ?>" class="form-boton-delete-act"><i class="fa-solid fa-pen"></i></a>
             <!-- ELIMINAR -->
             <a href="borrarPropu.php?id=<?php echo $row->cod_proye ?>" class="form-boton-delete-ac">   <i class="fa-solid fa-trash"></i></a> 
            
           
-        </th> 
+        </thead> 
         
     </tr>
 
 <?php }} ?>
             </tbody>
         </table>
-  <br>
+
     </div>
 
-     <div class="en-blanco"></div>    
+        
     </main>
 
 </div> 
