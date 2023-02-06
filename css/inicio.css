@@ -15,6 +15,11 @@
     /* border:1px solid green; */
 }
 
+body.swal2-height-auto {
+    /* height: auto !important; */
+}
+
+
 html,
 body {
   height: 100%;
