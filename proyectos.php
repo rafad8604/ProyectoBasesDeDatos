@@ -235,7 +235,7 @@
 
     <tr>
         <!-- CODIGO DE LOS ESTUDIANTES -->
-        <th>
+        <td>
          <?php 
             $sql = "SELECT nomb_est, ape_est FROM estudiantes WHERE cod_proye='$row->cod_proye'";
             $queryx = pg_query($sql);
@@ -243,26 +243,27 @@
                while($rowd=pg_fetch_object($queryx)){ ?>
 
            
-                <?php echo $rowd->nomb_est; ?><br>
+                <?php echo $rowd->nomb_est; ?>
+                <?php echo $rowd->ape_est; ?><br>
             
 
              <?php   }} ?>
-             </th>
+             </td>
 
         <!-- CODIGO PROYECTO -->
 
-        <th> <?php echo $row->cod_proye?> </th>
+        <td> <?php echo $row->cod_proye?> </td>
 
         <!-- FECHA PRESENTACION -->
         
-        <th><?php echo $row->fecha_pre?></th>
+        <td><?php echo $row->fecha_pre?></td>
 
-        <th><a class="ver-fecha_pre" value="<?php echo $row->cod_proye?>"><i class="fa-solid fa-pen"></i></a></th>
+        <td><a class="ver-fecha_pre" value="<?php echo $row->cod_proye?>"><i class="fa-solid fa-pen"></i></a></td>
 
         <!-- RECINTO -->
 
 
-        <th>
+        <td>
             
         <?php 
 
@@ -274,9 +275,9 @@
   
         echo $rowr->nomb_rec;}} ?>
     
-        </th>
+        </td>
 
-        <th><a class="asignar-recinto" value="<?php echo $row->cod_proye ?>"><i class="fa-solid fa-pen"></i></a></th>
+        <td><a class="asignar-recinto" value="<?php echo $row->cod_proye ?>"><i class="fa-solid fa-pen"></i></a></td>
 
         <!-- JURADOS -->
 
@@ -286,11 +287,11 @@
         $rowj=pg_fetch_object($queryj);
         ?>
 
-        <th><a class="ver-jurado" value="<?php echo $row->cod_jur?>"><?php echo $rowj->nomb_jur ?></a></th>
+        <td><a class="ver-jurado" value="<?php echo $row->cod_jur?>"><?php echo $rowj->nomb_jur ?></a></td>
 
         <!-- VEREDICTO -->
                 
-        <th><a class="ver-veredicto" value="<?php echo $row->cod_proye ?>"><i class="fa-solid fa-gavel"></i> </a></th> 
+        <td><a class="ver-veredicto" value="<?php echo $row->cod_proye ?>"><i class="fa-solid fa-gavel"></i> </a></td> 
         
     </tr>
 
@@ -298,10 +299,9 @@
             </tbody>
         </table>
 
-        <br>
     </div>
    
-    <div class="en-blanco"></div>     
+    
     </main>
 
 
