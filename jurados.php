@@ -22,6 +22,8 @@
     <script src="main.js"></script>
 
      <!-- Estilos externos -->
+    
+     <link rel="shortcut icon" type="image/x-icon" sizes="128x128" href="images/favicon.png">
 
      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" /> 
 
