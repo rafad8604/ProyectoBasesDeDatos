@@ -1,6 +1,17 @@
+@font-face {
+    font-family:'SF-Pro-Display' ;
+    src: url(../fonts/SF-Pro-Display-Bold.ttf);
+}
+
+@font-face {
+    font-family:'SF-Pro-Display-Regular' ;
+    src: url(../fonts/SF-Pro-Text-Regular.otf);
+}
+
 *{
     box-sizing: border-box;
     margin:0;
+    font-family:'SF-Pro-Display' ;
     /* border:1px solid green; */
 }
 
@@ -16,96 +27,6 @@ body {
 
 }
 
-@font-face {
-    font-family:Code-New-Roman ;
-    src: url(../fonts/lemon_milk/LEMONMILK-Light.otf);
-}
-
-@font-face {
-    font-family:Hundini;
-    src: url(../fonts/hun_din_1451/HunDIN1451.ttf);
-}
-
-@font-face {
-    font-family:Antapani;
-    src: url(../fonts/antapani/Antapani-ExtraBold.otf);
-}
-
-@font-face {
-    font-family:Helmet-Regular;
-    src: url(../fonts/helmet_2/Helmet-Regular.ttf);
-}
-
-@font-face {
-    font-family:Blue-Highway d;
-    src: url(../fonts/blue_highway/blue\ highway\ d.otf);
-}
-
-@font-face {
-    font-family:Blue-Highway bd;
-    src: url(../fonts/blue_highway/blue\ highway\ bd.otf);
-}
-
-@font-face {
-    font-family:Blue-Highway rg;
-    src: url(../fonts/blue_highway/blue\ highway\ rg.otf);
-}
-
-@font-face{
-    font-family:Euclid Circular A;
-    src: url(../fonts/euclid-circular-a-cufonfonts/Euclid\ Circular\ A\ Bold.ttf);
-
-}
-
-@font-face {
-    font-family:CreatoDisplay-ExtraBold;
-    src: url(../fonts/creato_display/CreatoDisplay-ExtraBold.otf);
-}
-
-@font-face {
-    font-family:CreatoDisplay-Medium;
-    src: url(../fonts/creato_display/CreatoDisplay-Medium.otf);
-}
-
-@font-face {
-    font-family:CreatoDisplay-Light;
-    src: url(../fonts/creato_display/CreatoDisplay-Light.otf);
-}
-
-@font-face{
-    font-family:Typo-Formal-Light-Demo;
-    src: url(../fonts/typo_formal/Typo\ Formal\ Light\ Demo.otf);
-}
-
-@font-face{
-    font-family:Typo-Formal-Regular-Demo;
-    src: url(../fonts/typo_formal/Typo\ Formal\ Regular\ Demo.otf);
-}
-
-@font-face {
-    font-family:Ebrima;
-    src: url(../fonts/Ebrima\ Font/ebrima.tff);
-}
-
-@font-face {
-    font-family:Ebrima-bold;
-    src: url(../fonts/Ebrima\ Font/Ebrima-bold.tff);
-}
-
-@font-face {
-    font-family:Gontserrat-Medium;
-    src: url(../fonts/gontserrat/Gontserrat-Medium.ttf);
-}
-
-@font-face{
-    font-family:Gontserrat-Regular;
-    src: url(../fonts/gontserrat/Gontserrat-Regular.ttf);
-}
-
-@font-face {
-    font-family:Gontserrat-Light;
-    src: url(../fonts/gontserrat/Gontserrat-Light.ttf);
-}
 
 /* <-------------------- GRID -------------------------->  */
 
@@ -118,6 +39,7 @@ body {
     grid-row-gap: 0px;
     height:100%;  
     background: #dadadb;
+    
 
 }
 
@@ -129,6 +51,7 @@ aside {
     background: linear-gradient(0deg, rgba(128,19,30,1) 9%, rgba(214,15,42,1) 69%, rgba(255,94,57,1) 100%);
     box-shadow:5px 0px 30px 0.6px #f26262;
     z-index:3;
+    
     height:auto;
 }
 
@@ -181,9 +104,7 @@ img{
 .dashboard{
     color:white;
     text-shadow: -0.3px -0.3px 1em #d4a3a3;
-    /* font-family:Typo-Formal-Regular-Demo; */
-    /* font-family:Hundini; */
-    font-family:Code-New-Roman ;
+    font-family:'SF-Pro-Display' ;
     font-size:20px;
     width:100%;
     display:flex;
@@ -202,10 +123,7 @@ img{
 
 .aside-interface{
     color:rgb(209, 200, 200);
-    /* font-family:Typo-Formal-Regular-Demo; */
-    /* font-family:Gontserrat-Medium; */
-    /* font-family:Hundini; */
-    font-family:Code-New-Roman ;
+    font-family:'SF-Pro-Display' ;
     width:80%;
     display:flex;
     margin:10px auto;
@@ -238,10 +156,8 @@ ul{
 
 ul li a{
     color:white;
-    /* font-family:Typo-Formal-Regular-Demo; */
-    /* font-family:Gontserrat-Regular; */
-    /* font-family:Hundini; */
-    font-family:Code-New-Roman ;
+    font-family:'SF-Pro-Display-Regular' ;
+    font-weight:300;
     font-size:15px;
     text-decoration:none;
     text-shadow: 0 0 0.3em rgba(255, 255, 255, 0.43);
@@ -289,8 +205,9 @@ header{
     display:flex;
 }
 
+
 .header-title{
-    font-family:Gontserrat-Light;
+    
     width:100%;
     height:auto;
     grid-area: 1 / 13 / 2 / 16;
@@ -335,7 +252,7 @@ header{
     cursor: pointer;
     color: #f9f9f9;
     font-size: 16px;
-    font-family: "Euclid Circular A";
+    font-family:'SF-Pro-Display-Regular' ;
     height:50px;
   }
   
@@ -352,6 +269,7 @@ header{
   }
   
   .menudd {
+
     overflow: hidden;
     position: absolute;
     left: 0;
@@ -411,7 +329,7 @@ header{
     margin:10px;
     font-size:40px;
     color:white;
-    font-family:Euclid Circular A;
+    font-family:'SF-Pro-Display-Regular' ;
   
 }
 
@@ -449,12 +367,7 @@ th{
 td{
     padding:15px;
     border-bottom: solid 1px;
-    /* font-family:CreatoDisplay-Light; */
-    /* font-family:Ebrima; */
-    /* font-family:Gontserrat-Light; */
-    /* font-family:Blue-Highway rg; */
-    /* font-family:Helmet-Regular; */
-    font-family:Antapani;
+    font-family:'SF-Pro-Display-Regular' ;
     font-size:16px;
 
 }
@@ -541,7 +454,7 @@ table{
     border-radius: 20px;
     box-sizing: border-box;
     
-    font-family:Euclid Circular A;
+    font-family:'SF-Pro-Display' ;
 }
 
 
@@ -563,26 +476,13 @@ background: linear-gradient(90deg, rgba(218,42,65,1) 0%, rgba(255,46,46,1) 100%)
     font-size:20px;
     border-bottom:8px solid #d8d8d9;
     border-radius:10px;
-    /* font-family:CreatoDisplay-ExtraBold;  */
-    /* font-family:Typo-Formal-Regular-Demo; */
-    /* font-family:Ebrima;
-    font-weight:bold; */
-    /* font-family:Gontserrat-Medium; */
-    /* font-family:Blue-Highway d; */
-    /* font-family:Helmet-Regular; */
-    font-family:Antapani;
+    font-family:'SF-Pro-Display-Regular' ;
     
 }
 
 .header-table-row{
-    /* font-family:CreatoDisplay-Medium;  */
-    /* font-family:Typo-Formal-Regular-Demo; */
-    /* font-family:Ebrima;
-    font-weight:bold; */
-    /* font-family:Gontserrat-Regular; */
-    /* font-family:Blue-Highway bd; */
-    /* font-family:Helmet-Regular; */
-    font-family:Antapani;
+
+    font-family:'SF-Pro-Display-Regular' ;
 }
 
 
@@ -610,7 +510,7 @@ tr:nth-child(even){
 }
 
 dialog h2{
-    font-family:CreatoDisplay-ExtraBold; 
+    font-family:'SF-Pro-Display-Regular' ;
     height:50px;
     width:80%;
     font-size:20px;
@@ -719,7 +619,7 @@ dialog h2{
     background: linear-gradient(90deg, rgba(218,42,65,1) 0%, rgba(255,46,46,1) 100%);
     padding:20px 20px;
     border:none;
-    font-family:Euclid Circular A;
+    font-family:'SF-Pro-Display-Regular' ;
     font-size:28px;
     
 }
@@ -749,7 +649,7 @@ background: linear-gradient(90deg, rgba(239,44,54,1) 0%, rgba(218,42,65,1) 100%)
     background: linear-gradient(90deg, rgba(218,42,65,1) 0%, rgba(255,46,46,1) 100%);
     padding:20px 20px;
     border:none;
-    font-family:Euclid Circular A;
+    font-family:'SF-Pro-Display-Regular' ;
     font-size:28px;
 }
 
@@ -1007,7 +907,7 @@ position: absolute;
 } 
 
 .select select {
-        font-family: 'Arial';
+    font-family:'SF-Pro-Display-Regular' ;
         display: inline-block;
         width: 90%;
         height:30px;
@@ -1175,6 +1075,7 @@ position: absolute;
 }
 
 .table-modal-crud{
+    font-size:13px;
     border:1px solid #dadadb;
     color:#4f4c4c;
     text-align: center;
@@ -1192,4 +1093,9 @@ position: absolute;
     height:100px;
     width:100%;
     display:inline-block;
+}
+
+#razon{
+font-size:14px;
+width:20%;
 }
